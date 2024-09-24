@@ -75,3 +75,7 @@ salt-key -D
 # deleting with a filter
 salt-key -d 'web*'
 ```
+## **Verify the Configuration**:
+``` bash
+salt '*' test.version
+```
