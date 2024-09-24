@@ -26,11 +26,13 @@ sudo cp salt-installation/states/xrdp_egfx.sls /srv/salt/
 ### 3. Apply the State to Minions:
 Run the following command to apply the XRDP installation state to all minions or specific minions:
 ```bash
+sudo salt -G 'os:Ubuntu' state.apply ubuntu-desktop
 sudo salt -G 'os:Ubuntu' state.apply xrdp_egfx
 ```
 ### 4. Verify Installation:
 After the state is applied, you can verify XRDP installation on all minions by running:
 ```bash
+sudo salt -G 'os:Ubuntu' cmd.run 'dpkg -l | grep ubuntu-desktop'
 sudo salt -G 'os:Ubuntu' cmd.run 'dpkg -l | grep xrdp'
 ```
 ## Configurations for Multi-Minions
